@@ -73,6 +73,7 @@ public class RoleService {
     return roleRepository.save(role);
   }
 
-    public void delete(Long id) {
-    }
+  public void delete(Long id) {
+    roleRepository.deleteById(id);
+  }
 }
