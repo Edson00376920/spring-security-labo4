@@ -9,7 +9,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.server.app.filters.DynamicAuthorizationFilter;
+import com.server.app.config.DynamicAuthorizationFilter;
 
 @Configuration
 @EnableMethodSecurity(prePostEnabled = true)
@@ -18,7 +18,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final DynamicAuthorizationFilter dynamicAuthorizationFilter;
 
-    public SecurityConfig(com.server.app.filters.JwtAuthenticationFilter jwtAuthenticationFilter, DynamicAuthorizationFilter dynamicAuthorizationFilter) {
+    public SecurityConfig(com.server.app.config.JwtAuthenticationFilter jwtAuthenticationFilter, DynamicAuthorizationFilter dynamicAuthorizationFilter) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.dynamicAuthorizationFilter = dynamicAuthorizationFilter;
     }
